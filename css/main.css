@@ -1,11 +1,12 @@
 :root {
   color-scheme: dark light;
   --font: 'Vend Sans', sans-serif;
-  --txt: light_dark(#333, #e4e4e4);
-  --bg: light_dark(#e4e4e4, #333);
+  --txt: light-dark(#333, #e4e4e4);
+  --bg: light-dark(#e4e4e4, #333);
   --ppl: rebeccapurple;
   --radius: 0.8rem;
   --cols: 1;
+  --direction: column;
 }
 html,
 body {
@@ -47,7 +48,7 @@ main {
 .card {
   border: 0.5px solid currentColor;
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--direction);
   justify-content: space-between;
   border-radius: var(--radius);
   overflow: clip;
@@ -79,6 +80,22 @@ main {
 }
 @media (width > 1300px) {
   :root {
-    --cols: 4;
+    /* --cols: 4; */
+    --direction: row;
+  }
+  .card {
+    justify-content: space-between;
+    background-color: var(--txt);
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .card__image {
+    max-width: 70%;
+  }
+  .card__title {
+    font-size: 1.2rem;
+    padding-inline-end: 1rem;
+    text-align: left;
+    color: var(--bg);
   }
 }
