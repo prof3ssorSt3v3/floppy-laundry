@@ -1,0 +1,84 @@
+:root {
+  color-scheme: dark light;
+  --font: 'Vend Sans', sans-serif;
+  --txt: light_dark(#333, #e4e4e4);
+  --bg: light_dark(#e4e4e4, #333);
+  --ppl: rebeccapurple;
+  --radius: 0.8rem;
+  --cols: 1;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font);
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+body {
+  min-height: 100vh;
+  color: var(--txt);
+  background-color: var(--bg);
+}
+h1,
+h2 {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin-block: 0;
+}
+header {
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  border-bottom: 0.5px solid currentColor;
+}
+main {
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+.content {
+  /* layout css */
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+.card {
+  border: 0.5px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: var(--radius);
+  overflow: clip;
+  background-color: var(--bg);
+}
+.card__image {
+  max-width: 100%;
+}
+.card__title {
+  color: var(--txt);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-block: 0;
+  padding-block: 0.5rem;
+}
+
+@media (width > 500px) {
+  :root {
+    --cols: 2;
+  }
+}
+@media (width > 900px) {
+  :root {
+    --cols: 3;
+  }
+}
+@media (width > 1300px) {
+  :root {
+    --cols: 4;
+  }
+}
